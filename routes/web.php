@@ -30,3 +30,7 @@ Route::get('/piutang.php', function () {
 Route::get('/operasional.php', function () {
     return view('operasional');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
