@@ -19,6 +19,10 @@ Route::get('/penjualan.php', function () {
     return view('penjualan');
 });
 
+Route::get('/input.php', function () {
+    return view('input');
+});
+
 Route::get('/barang.php', function () {
     return view('Barang');
 });
