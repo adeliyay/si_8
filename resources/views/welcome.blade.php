@@ -115,22 +115,22 @@
           </div>
         </li> -->
         <li class="nav-item">
-          <a class="nav-link" href="charts.html">
+          <a class="nav-link" href="penjualan.php">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Data Penjualan</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="tables.html">
+          <a class="nav-link" href="barang.php">
             <i class="fas fa-fw fa-table"></i>
             <span>Input Barang</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="charts.html">
+          <a class="nav-link" href="piutang.php">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Data Utang</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="tables.html">
+          <a class="nav-link" href="operasional.php">
             <i class="fas fa-fw fa-table"></i>
             <span>Biaya Bulanan</span></a>
         </li>

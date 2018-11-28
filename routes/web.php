@@ -14,3 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/penjualan.php', function () {
+    return view('penjualan');
+});
+
+Route::get('/barang.php', function () {
+    return view('Barang');
+});
+
+Route::get('/piutang.php', function () {
+    return view('piutang');
+});
+
+Route::get('/operasional.php', function () {
+    return view('operasional');
+});
