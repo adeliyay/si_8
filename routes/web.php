@@ -18,10 +18,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
-Route::get('/penjualan', 'HomeController@index')->name('penjualan');
-Route::get('/barang', 'HomeController@index')->name('barang');
-Route::get('/piutang', 'HomeController@index')->name('piutang');
-Route::get('/operasional', 'HomeController@index')->name('operasional');
+Route::get('/penjualan', 'HomeController@jual')->name('penjualan');
+Route::get('/barang', 'HomeController@barang')->name('barang');
+Route::get('/piutang', 'HomeController@piutang')->name('piutang');
+Route::get('/operasional', 'HomeController@op')->name('operasional');
+
+Route::get('/input.php', function () {
+    return view('input');
+});
 
 // Route::get('/', function () {
 //     return view('dashboard');

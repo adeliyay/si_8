@@ -18,7 +18,7 @@ class CreateBarangsTable extends Migration
             $table->integer('id_barang')->unsigned();
             $table->string('nama_barang');
             $table->string('nama_distributor');
-            $table->string('deskripsi_barang');
+            $table->text('deskripsi_barang');
             $table->integer('jumlah_barang');
             $table->integer('harga_beli');
             $table->integer('harga_jual');

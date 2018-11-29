@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Dashboard</title>
+    <title>Dashboard</title>
 
     <!-- Bootstrap core CSS-->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-      <a class="navbar-brand mr-1" href="index.html">Start Bootstrap</a>
+      <a class="navbar-brand mr-1" href="{{ route('dashboard') }}">Start Bootstrap</a>
 
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
@@ -92,8 +92,8 @@
 
       <!-- Sidebar -->
       <ul class="sidebar navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="/">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('dashboard') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
           </a>
@@ -114,23 +114,23 @@
             <a class="dropdown-item" href="blank.html">Blank Page</a>
           </div>
         </li> -->
-        <li class="nav-item">
-          <a class="nav-link" href="penjualan.php">
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ route('penjualan') }}">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Data Penjualan</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="barang.php">
+          <a class="nav-link" href="{{ route('barang') }}">
             <i class="fas fa-fw fa-table"></i>
             <span>Input Barang</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="piutang.php">
+          <a class="nav-link" href="{{ route('piutang') }}">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Data Utang</span></a>
+            <span>Data piutang</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="operasional.php">
+          <a class="nav-link" href="{{ route('operasional') }}">
             <i class="fas fa-fw fa-table"></i>
             <span>Biaya Bulanan</span></a>
         </li>
