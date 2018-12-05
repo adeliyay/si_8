@@ -92,7 +92,7 @@
 
       <!-- Sidebar -->
       <ul class="sidebar navbar-nav">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="/">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
@@ -119,7 +119,7 @@
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Data Penjualan</span></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="barang.php">
             <i class="fas fa-fw fa-table"></i>
             <span>Input Barang</span></a>
@@ -143,40 +143,60 @@
           <!-- Breadcrumbs-->
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <a href="#">Dashboard</a>
+              <a href="{{route('barang.index')}}">Data Barang</a>
             </li>
-            <li class="breadcrumb-item active">Overview</li>
+            <li class="breadcrumb-item active">Input</li>
           </ol>
 
         <!-- Input Barang -->
         <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
-              Input Barang</div>
+              Input Data Barang</div>
             <div class="card-body">
-              <form method="POST" action="">
-                  Jenis Barang:<br><input type="text" class="form-control" size=50><br>
-                  Nama Barang:<br><input type="text" class="form-control" size=50><br>
-                  Distributor:<br><input type="text" class="form-control" size=50><br>
-                  Deskripsi: <br><textarea value="Ketikkan deskripsi..." name="deskripsi" rows=5 cols=51>
-                  </textarea><br><br>
-                  Harga Beli:<br><input type="text" class="form-control" size=10><br>
-                  Jumlah: <input type="number" size=10 min=0 size=2>
-                  <br><br><input type="submit" value="Draft">
-                  <input type="submit" value="OK">
-              </form>
+              <div class="table-responsive">
+              <form action="{{ route('barang.store') }}" method="post">
+            {{ csrf_field() }}
+            <div class="form-group">
+              <label for="">Nama Barang</label>
+                <input type="text" class="form-control" name="nama" placeholder="">
             </div>
-          </div>
-        </div>
+            <div class="form-group">
+              <label for="">Distributor</label>
+                <input type="text" class="form-control" name="distributor" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="">Deskripsi</label>
+                <textarea class="form-control" name="deskripsi" rows="3" placeholder=""></textarea>
+            </div>
+            <div class="form-group">
+              <label for="">Jumlah</label>
+                <input type="number" class="form-control" name="jumlah" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="">Harga Beli</label>
+                <input type="number" class="form-control" name="beli" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="">Harga Jual</label>
+              <input type="number" class="form-control" name="jual" placeholder="">
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn btn-primary" value="Save">
+            </div>
+          </form>
+            <!-- </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          </div> -->
 
         <!-- Sticky Footer -->
-        <footer class="sticky-footer">
+        <!-- <footer class="sticky-footer">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
               <span>Copyright © Your Website 2018</span>
             </div>
           </div>
-        </footer>
+        </footer> -->
 
       </div>
       <!-- /.content-wrapper -->

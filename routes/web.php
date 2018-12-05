@@ -19,9 +19,14 @@ Auth::routes();
 
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 Route::get('/penjualan', 'HomeController@jual')->name('penjualan');
-Route::get('/barang', 'HomeController@barang')->name('barang');
+// Route::get('/barang', 'HomeController@barang')->name('barang');
 Route::get('/piutang', 'HomeController@piutang')->name('piutang');
 Route::get('/operasional', 'HomeController@op')->name('operasional');
+Route::get('/home', 'HomeController@home')->name('home');
+
+Route::get('/input', 'InputController@barang')->name('barang');
+Route::post('/input', 'InputController@store')->name('barang.store');
+Route::get('/barang', 'InputController@index')->name('barang.index');
 
 Route::get('/input.php', function () {
     return view('input');

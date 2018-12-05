@@ -15,13 +15,14 @@ class CreateBarangsTable extends Migration
     {
         Schema::create('barangs', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_barang')->unsigned();
-            $table->string('nama_barang');
-            $table->string('nama_distributor');
-            $table->text('deskripsi_barang');
-            $table->integer('jumlah_barang');
-            $table->integer('harga_beli');
-            $table->integer('harga_jual');
+            // $table->integer('id_barang')->unsigned();
+            $table->integer('user_id');
+            $table->string('nama');
+            $table->string('distributor');
+            $table->text('deskripsi');
+            $table->integer('jumlah');
+            $table->integer('beli');
+            $table->integer('jual');
             $table->timestamps();
         });
     }
