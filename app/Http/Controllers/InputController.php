@@ -28,5 +28,6 @@ class InputController extends Controller
             'beli' => request('beli'),
             'jual' => request('jual')
         ]);
+        return redirect('/barang');
     }
 }

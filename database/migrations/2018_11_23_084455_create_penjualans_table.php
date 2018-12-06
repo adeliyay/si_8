@@ -15,7 +15,8 @@ class CreatePenjualansTable extends Migration
     {
         Schema::create('penjualans', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_penjualan')->unsigned();
+            // $table->integer('id_penjualan')->unsigned();
+            $table->integer('user_id');
             $table->string('nama_barang');
             $table->string('nama_konsumen');
             $table->string('deskripsi_penjualan');

@@ -15,7 +15,8 @@ class CreateOperasionalsTable extends Migration
     {
         Schema::create('operasionals', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_operasional')->unsigned();
+            // $table->integer('id_operasional')->unsigned();
+            $table->integer('user_id');
             $table->string('deskripsi_operasional'); //per barang
             $table->integer('biaya_operasional'); //per barang
             $table->integer('total_biaya'); //harian

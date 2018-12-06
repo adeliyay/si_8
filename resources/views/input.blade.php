@@ -93,7 +93,7 @@
       <!-- Sidebar -->
       <ul class="sidebar navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="/">
+          <a class="nav-link" href="{{ route('dashboard') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
           </a>
@@ -115,22 +115,22 @@
           </div>
         </li> -->
         <li class="nav-item">
-          <a class="nav-link" href="penjualan.php">
+          <a class="nav-link" href="{{ route('penjualan') }}">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Data Penjualan</span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="barang.php">
+          <a class="nav-link" href="{{ route('barang.index') }}">
             <i class="fas fa-fw fa-table"></i>
             <span>Input Barang</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="piutang.php">
+          <a class="nav-link" href="{{ route('piutang') }}">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Data Utang</span></a>
+            <span>Data piutang</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="operasional.php">
+          <a class="nav-link" href="{{ route('operasional') }}">
             <i class="fas fa-fw fa-table"></i>
             <span>Biaya Bulanan</span></a>
         </li>

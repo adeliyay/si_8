@@ -15,7 +15,8 @@ class CreatePiutangsTable extends Migration
     {
         Schema::create('piutangs', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_piutang')->unsigned();
+            // $table->integer('id_piutang')->unsigned();
+            $table->integer('user_id');
             $table->string('asal_piutang');
             $table->text('deskripsi_piutang');
             $table->date('jatuh_tempo');

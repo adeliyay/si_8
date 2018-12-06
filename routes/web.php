@@ -28,9 +28,13 @@ Route::get('/input', 'InputController@barang')->name('barang');
 Route::post('/input', 'InputController@store')->name('barang.store');
 Route::get('/barang', 'InputController@index')->name('barang.index');
 
-Route::get('/input.php', function () {
-    return view('input');
-});
+Route::get('/piutanginput', 'PiutangController@create')->name('piutang.create');
+Route::post('/piutanginput', 'PiutangController@store')->name('piutang.store');
+Route::get('/piutang', 'PiutangController@index')->name('piutang');
+
+// Route::get('/input.php', function () {
+//     return view('input');
+// });
 
 // Route::get('/', function () {
 //     return view('dashboard');

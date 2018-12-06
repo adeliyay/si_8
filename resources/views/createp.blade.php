@@ -29,7 +29,7 @@
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-      <a class="navbar-brand mr-1" href="{{ route('dashboard') }}">Start Bootstrap</a>
+      <a class="navbar-brand mr-1" href="index.html">Start Bootstrap</a>
 
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
@@ -143,70 +143,52 @@
           <!-- Breadcrumbs-->
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <a href="#">Dashboard</a>
+              <a href="{{route('piutang')}}">Data Piutang</a>
             </li>
-            <li class="breadcrumb-item active">Tables</li>
+            <li class="breadcrumb-item active">Input</li>
           </ol>
 
-          <!-- DataTables Example -->
-          <div class="card mb-3">
+        <!-- Input Barang -->
+        <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
-              Data Piutang</div>
+              Input Data Piutang</div>
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>Asal Piutang</th>
-                      <th>Jatuh tempo</th>
-                      <th>Deskripsi Piutang</th>
-                      <th>Jumlah piutang</th>
-                    </tr>
-                  </thead>
-                  <!-- <tfoot>
-                    <tr>
-                      <th>Name</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>Age</th>
-                      <th>Start date</th>
-                      <th>Salary</th>
-                    </tr>
-                  </tfoot> -->
-                  <tbody>
-                  @foreach ($piutangs as $piutang)
-                    <tr>
-                      <td>{{$piutang->asal_piutang}}</td>
-                      <td>{{$piutang->jatuh_tempo}}</td>
-                      <td>{{$piutang->deskripsi_piutang}}</td>
-                      <td>{{$piutang->jumlah_piutang}}</td>
-                    </tr>
-                  @endforeach
-                    
-                  </tbody>
-                </table><br>
-                <a href="{{ route('piutang.create') }}" class="btn btn-primary" role="button" aria-pressed="true">Tambah Piutang</a>
-              </div>
+              <form action="{{ route('piutang.store') }}" method="post">
+            {{ csrf_field() }}
+            <div class="form-group">
+              <label for="">Asal Piutang</label>
+                <input type="text" class="form-control" name="asal_piutang" placeholder="">
             </div>
+            <div class="form-group">
+              <label for="">Jatuh Tempo</label>
+                <input type="date" class="form-control" name="jatuh_tempo" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="">Deskripsi</label>
+                <textarea class="form-control" name="deskripsi_piutang" rows="3" placeholder=""></textarea>
+            </div>
+            <div class="form-group">
+              <label for="">Total Piutang</label>
+                <input type="number" class="form-control" name="jumlah_piutang" placeholder="">
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn btn-primary" value="Save">
+            </div>
+          </form>
+            <!-- </div>
             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-          </div>
-
-          <!-- <p class="small text-center text-muted my-5">
-            <em>More table examples coming soon...</em>
-          </p> -->
-
-        </div>
-        <!-- /.container-fluid -->
+          </div> -->
 
         <!-- Sticky Footer -->
-        <footer class="sticky-footer">
+        <!-- <footer class="sticky-footer">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
               <span>Copyright © Your Website 2018</span>
             </div>
           </div>
-        </footer>
+        </footer> -->
 
       </div>
       <!-- /.content-wrapper -->
@@ -246,6 +228,7 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Page level plugin JavaScript-->
+    <script src="vendor/chart.js/Chart.min.js"></script>
     <script src="vendor/datatables/jquery.dataTables.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
 
@@ -254,6 +237,7 @@
 
     <!-- Demo scripts for this page-->
     <script src="js/demo/datatables-demo.js"></script>
+    <script src="js/demo/chart-area-demo.js"></script>
 
   </body>
 
