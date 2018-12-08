@@ -77,6 +77,8 @@
                       <th>Jumlah Barang</th>
                       <th>Harga Beli</th>
                       <th>Harga Jual</th>
+                      <th>Update</th>
+                      <th>Delete</th>
                     </tr>
                   </thead>
                   <!-- <tfoot>
@@ -98,6 +100,13 @@
                       <td>{{$Barang->jumlah}}</td>
                       <td>{{$Barang->beli}}</td>
                       <td>{{$Barang->jual}}</td>
+                      <td><a href="{{ route('barang.edit', $Barang) }}" class="btn btn-primary" role="button" aria-pressed="true">Update</a></td>
+                      <td>
+                      <form class="" action="{{ route('barang.destroy', $Barang) }}" method="post">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+                      <button type="submit" class="btn btn-danger" aria-pressed="true">Delete</button>
+                      </form></td>
                     </tr>
                   @endforeach
                     

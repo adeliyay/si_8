@@ -68,31 +68,32 @@
               Input Data Barang</div>
             <div class="card-body">
               <div class="table-responsive">
-              <form action="{{ route('barang.store') }}" method="post">
+              <form action="{{ route('barang.update', $barang) }}" method="post">
             {{ csrf_field() }}
+            {{ method_field('PATCH') }}
             <div class="form-group">
               <label for="">Nama Barang</label>
-                <input type="text" class="form-control" name="nama" placeholder="">
+                <input type="text" class="form-control" name="nama" placeholder="" value="{{ $barang -> nama }}">
             </div>
             <div class="form-group">
               <label for="">Distributor</label>
-                <input type="text" class="form-control" name="distributor" placeholder="">
+                <input type="text" class="form-control" name="distributor" placeholder="" value="{{ $barang -> distributor }}">
             </div>
             <div class="form-group">
               <label for="">Deskripsi</label>
-                <textarea class="form-control" name="deskripsi" rows="3" placeholder=""></textarea>
+                <textarea class="form-control" name="deskripsi" rows="3" placeholder="">{{ $barang -> deskripsi }}</textarea>
             </div>
             <div class="form-group">
               <label for="">Jumlah</label>
-                <input type="number" class="form-control" name="jumlah" placeholder="">
+                <input type="number" class="form-control" name="jumlah" placeholder="" value="{{ $barang -> jumlah }}">
             </div>
             <div class="form-group">
               <label for="">Harga Beli</label>
-                <input type="number" class="form-control" name="beli" placeholder="">
+                <input type="number" class="form-control" name="beli" placeholder="" value="{{ $barang -> beli }}">
             </div>
             <div class="form-group">
               <label for="">Harga Jual</label>
-              <input type="number" class="form-control" name="jual" placeholder="">
+              <input type="number" class="form-control" name="jual" placeholder="" value="{{ $barang -> jual }}">
             </div>
             <div class="form-group">
               <input type="submit" class="btn btn-primary" value="Save">

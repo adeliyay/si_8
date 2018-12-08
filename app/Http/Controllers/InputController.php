@@ -34,4 +34,23 @@ class InputController extends Controller
         $barang = Barang::find($id);
         return view('barang.edit', compact('barang'));
     }
+    public function update($id)
+    {
+        $barang = Barang::find($id);
+        $barang->update([
+            'nama' => request('nama'),
+            'distributor' => request('distributor'),
+            'deskripsi' => request('deskripsi'),
+            'jumlah' => request('jumlah'),
+            'beli' => request('beli'),
+            'jual' => request('jual')
+        ]);
+        return redirect()->route('barang.index');
+    }
+    public function destroy($id)
+    {
+        $barang = Barang::find($id);
+        $barang->delete();
+        return redirect()->route('barang.index');
+    }
 }

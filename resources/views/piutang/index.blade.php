@@ -75,6 +75,8 @@
                       <th>Jatuh tempo</th>
                       <th>Deskripsi Piutang</th>
                       <th>Jumlah piutang</th>
+                      <th>Update</th>
+                      <th>Delete</th>
                     </tr>
                   </thead>
                   <!-- <tfoot>
@@ -94,6 +96,13 @@
                       <td>{{$piutang->jatuh_tempo}}</td>
                       <td>{{$piutang->deskripsi_piutang}}</td>
                       <td>{{$piutang->jumlah_piutang}}</td>
+                      <td><a href="{{ route('piutang.edit',$piutang) }}" class="btn btn-primary" role="button" aria-pressed="true">Update</a></td>
+                      <td>
+                      <form class="" action="{{ route('piutang.destroy', $piutang) }}" method="post">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+                      <button type="submit" class="btn btn-danger" aria-pressed="true">Delete</button>
+                      </form></td>
                     </tr>
                   @endforeach
 

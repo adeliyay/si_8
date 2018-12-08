@@ -26,10 +26,27 @@ class PiutangController extends Controller
             'deskripsi_piutang' => request('deskripsi_piutang'),
             'jumlah_piutang' => request('jumlah_piutang')
         ]);
-        return redirect('/piutang');
+        return redirect()->route('piutang');
     }
     public function edit($id){
         $Piutang = piutang::find($id);
         return view('piutang.edit', compact('Piutang'));
+    }
+    public function update($id)
+    {
+        $Piutang = piutang::find($id);
+        $Piutang->update([
+            'asal_piutang' => request('asal_piutang'),
+            'jatuh_tempo' => request('jatuh_tempo'),
+            'deskripsi_piutang' => request('deskripsi_piutang'),
+            'jumlah_piutang' => request('jumlah_piutang')
+        ]);
+        return redirect()->route('piutang');
+    }
+    public function destroy($id)
+    {
+        $Piutang = piutang::find($id);
+        $Piutang->delete();
+        return redirect()->route('piutang');
     }
 }

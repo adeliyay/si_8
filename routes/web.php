@@ -28,6 +28,7 @@ Route::get('/barang/input', 'InputController@barang')->name('barang');
 Route::post('/barang/input', 'InputController@store')->name('barang.store');
 Route::get('/barang/{id}/edit','InputController@edit')->name('barang.edit');
 Route::patch('/barang/{id}/edit','InputController@update')->name('barang.update');
+Route::delete('/barang/{id}/delete','InputController@destroy')->name('barang.destroy');
 Route::get('/barang', 'InputController@index')->name('barang.index');
 
 Route::get('/piutang/input', 'PiutangController@create')->name('piutang.create');
@@ -35,6 +36,7 @@ Route::post('/piutang/input', 'PiutangController@store')->name('piutang.store');
 Route::get('/piutang', 'PiutangController@index')->name('piutang');
 Route::get('/piutang/{id}/edit','PiutangController@edit')->name('piutang.edit');
 Route::patch('/piutang/{id}/edit','PiutangController@update')->name('piutang.update');
+Route::delete('/piutang/{id}/delete','PiutangController@destroy')->name('piutang.destroy');
 
 Route::get('/operasional', 'OperasionalController@index')->name('operasional');
 Route::get('/operasional/input','OperasionalController@create')->name('operasional.create');

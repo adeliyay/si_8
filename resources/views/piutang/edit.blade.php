@@ -69,23 +69,24 @@
               Input Data Piutang</div>
             <div class="card-body">
               <div class="table-responsive">
-              <form action="{{ route('piutang.store') }}" method="post">
+              <form action="{{ route('piutang.update', $Piutang) }}" method="post">
             {{ csrf_field() }}
+            {{ method_field('PATCH') }}
             <div class="form-group">
               <label for="">Asal Piutang</label>
-                <input type="text" class="form-control" name="asal_piutang" placeholder="">
+                <input type="text" class="form-control" name="asal_piutang" placeholder="" value="{{ $Piutang -> asal_piutang }}">
             </div>
             <div class="form-group">
               <label for="">Jatuh Tempo</label>
-                <input type="date" class="form-control" name="jatuh_tempo" placeholder="">
+                <input type="date" class="form-control" name="jatuh_tempo" placeholder="" value="{{ $Piutang -> jatuh_tempo }}">
             </div>
             <div class="form-group">
               <label for="">Deskripsi</label>
-                <textarea class="form-control" name="deskripsi_piutang" rows="3" placeholder=""></textarea>
+                <textarea class="form-control" name="deskripsi_piutang" rows="3" placeholder="">{{ $Piutang -> deskripsi_piutang }}</textarea>
             </div>
             <div class="form-group">
               <label for="">Total Piutang</label>
-                <input type="number" class="form-control" name="jumlah_piutang" placeholder="">
+                <input type="number" class="form-control" name="jumlah_piutang" placeholder="" value="{{ $Piutang -> jumlah_piutang }}">
             </div>
             <div class="form-group">
               <input type="submit" class="btn btn-primary" value="Save">
