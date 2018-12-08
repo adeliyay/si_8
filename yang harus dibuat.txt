@@ -1,0 +1,18 @@
+Dashboard 
+-Chart untuk pengeluaran perminggu
+-Notifikasi untuk pembayaran piutang 
+-Reminder stok barang habis
+Penjualan terakhir 
+-Kalender 
+Kalender kalau di klik 
+Opsional kalender -> tabel rekap pengeluaran, pendapatan, dan totalnya perhari
+
+Data penjualan
+-Daftar dan edit data pendapatan 
+-Daftar dan edit data pengeluaran 
+-total biaya pendapatan
+-total pengeluaran 
+-total semuanya pend-peng
+
+Biaya bulanan :
+-Daftar dan input data pegawai

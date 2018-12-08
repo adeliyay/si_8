@@ -11,11 +11,11 @@ class PiutangController extends Controller
     public function index()
     {
         $piutangs = piutang::all();
-        return view('piutang', compact('piutangs'));
+        return view('piutang.index', compact('piutangs'));
     }
     public function create()
     {
-        return view('createp');
+        return view('piutang.create');
     }
     public function store()
     {
@@ -27,5 +27,9 @@ class PiutangController extends Controller
             'jumlah_piutang' => request('jumlah_piutang')
         ]);
         return redirect('/piutang');
+    }
+    public function edit($id){
+        $Piutang = piutang::find($id);
+        return view('piutang.edit', compact('Piutang'));
     }
 }

@@ -24,13 +24,17 @@ Route::get('/piutang', 'HomeController@piutang')->name('piutang');
 Route::get('/operasional', 'HomeController@op')->name('operasional');
 Route::get('/home', 'HomeController@home')->name('home');
 
-Route::get('/input', 'InputController@barang')->name('barang');
-Route::post('/input', 'InputController@store')->name('barang.store');
+Route::get('/barang/input', 'InputController@barang')->name('barang');
+Route::post('/barang/input', 'InputController@store')->name('barang.store');
+Route::get('/barang/{id}/edit','InputController@edit')->name('barang.edit');
+Route::patch('/barang/{id}/edit','InputController@update')->name('barang.update');
 Route::get('/barang', 'InputController@index')->name('barang.index');
 
-Route::get('/piutanginput', 'PiutangController@create')->name('piutang.create');
-Route::post('/piutanginput', 'PiutangController@store')->name('piutang.store');
+Route::get('/piutang/input', 'PiutangController@create')->name('piutang.create');
+Route::post('/piutang/input', 'PiutangController@store')->name('piutang.store');
 Route::get('/piutang', 'PiutangController@index')->name('piutang');
+Route::get('/piutang/{id}/edit','PiutangController@edit')->name('piutang.edit');
+Route::patch('/piutang/{id}/edit','PiutangController@update')->name('piutang.update');
 
 // Route::get('/input.php', function () {
 //     return view('input');
