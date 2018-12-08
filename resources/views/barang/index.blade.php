@@ -93,6 +93,7 @@
                   </tfoot> -->
                   <tbody>
                   @foreach ($barangs as $Barang)
+                  @if($id == $Barang->user_id)
                     <tr>
                       <td>{{$Barang->nama}}</td>
                       <td>{{$Barang->distributor}}</td>
@@ -108,6 +109,7 @@
                       <button type="submit" class="btn btn-danger" aria-pressed="true">Delete</button>
                       </form></td>
                     </tr>
+                  @endif
                   @endforeach
                     
                   </tbody>

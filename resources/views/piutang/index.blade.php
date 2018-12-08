@@ -91,6 +91,7 @@
                   </tfoot> -->
                   <tbody>
                   @foreach ($piutangs as $piutang)
+                  @if($id == $piutang->user_id)
                     <tr>
                       <td>{{$piutang->asal_piutang}}</td>
                       <td>{{$piutang->jatuh_tempo}}</td>
@@ -104,6 +105,7 @@
                       <button type="submit" class="btn btn-danger" aria-pressed="true">Delete</button>
                       </form></td>
                     </tr>
+                  @endif
                   @endforeach
 
                   </tbody>

@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\piutang;
+use App\User;
+// use App\Http\Controllers\Auth;
 
 class PiutangController extends Controller
 {
     public function index()
     {
+        $id = Auth::user()->id;
         $piutangs = piutang::all();
-        return view('piutang.index', compact('piutangs'));
+        return view('piutang.index', compact('piutangs','id'));
     }
     public function create()
     {
