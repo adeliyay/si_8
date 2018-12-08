@@ -96,7 +96,7 @@
                       <td>{{$piutang->jumlah_piutang}}</td>
                     </tr>
                   @endforeach
-                    
+
                   </tbody>
                 </table><br>
                 <a href="{{ route('piutang.create') }}" class="btn btn-primary" role="button" aria-pressed="true">Tambah Piutang</a>

@@ -21,8 +21,8 @@ Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 Route::get('/penjualan', 'HomeController@jual')->name('penjualan');
 // Route::get('/barang', 'HomeController@barang')->name('barang');
 Route::get('/piutang', 'HomeController@piutang')->name('piutang');
-Route::get('/operasional', 'HomeController@op')->name('operasional');
 Route::get('/home', 'HomeController@home')->name('home');
+Route::get('/operasional', 'HomeController@op')->name('operasional');
 
 Route::get('/barang/input', 'InputController@barang')->name('barang');
 Route::post('/barang/input', 'InputController@store')->name('barang.store');
@@ -36,6 +36,11 @@ Route::get('/piutang', 'PiutangController@index')->name('piutang');
 Route::get('/piutang/{id}/edit','PiutangController@edit')->name('piutang.edit');
 Route::patch('/piutang/{id}/edit','PiutangController@update')->name('piutang.update');
 
+Route::get('/operasional', 'OperasionalController@index')->name('operasional');
+Route::get('/operasional/input','OperasionalController@create')->name('operasional.create');
+Route::post('/operasional/input','OperasionalController@store')->name('operasional.store');
+Route::get('/operasional/{id}/edit','OperasionalController@edit')->name('operasional.edit');
+Route::get('/operasional/{id}/edit','OperasionalController@update')->name('operasional.update');
 // Route::get('/input.php', function () {
 //     return view('input');
 // });
