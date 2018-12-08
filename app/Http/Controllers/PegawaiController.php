@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Pegawai;
+use App\User;
 
 class PegawaiController extends Controller
 {
     public function index(){
+        $id = Auth::user()->id;
         $pegawais = Pegawai::all();
-        return view('pegawai.index',compact('pegawais'));
+        return view('pegawai.index',compact('pegawais', 'id'));
     }
 
     public function create(){
@@ -19,7 +21,7 @@ class PegawaiController extends Controller
 
     public function store(){
       Pegawai::create([
-          'id'=>Auth::id(),
+          'user_id'=>Auth::id(),
           'nama_pegawai' => request('nama_pegawai'),
           'bagian' => request('bagian'),
           'gaji_pegawai' => request('gaji_pegawai')

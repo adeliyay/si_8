@@ -75,8 +75,8 @@
                     <th>Nama Pegawai</th>
                     <th>Bagian</th>
                     <th>Gaji</th>
-                    <th></th>
-                    <th></th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                   </tr>
                 </thead>
                 <!-- <tfoot>
@@ -93,6 +93,7 @@
                   <!-- counter from https://stackoverflow.com/a/30142910 -->
                   <?php $i = 0 ?>
                   @foreach ($pegawais as $pegawai)
+                  @if($id == $pegawai->user_id)
                   <?php $i++ ?>
                     <tr>
                       <td>{{ $i }}</td>
@@ -110,6 +111,7 @@
                         </div>
                       </td>
                     </tr>
+                  @endif
                   @endforeach
                 </tbody>
               </table><br>

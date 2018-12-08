@@ -56,7 +56,7 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{route('barang.index')}}">Data Barang</a>
+            <a href="{{route('pegawai')}}">Data Pegawai</a>
           </li>
           <li class="breadcrumb-item active">Input</li>
         </ol>
