@@ -36,11 +36,12 @@ Route::get('/piutang', 'PiutangController@index')->name('piutang');
 Route::get('/piutang/{id}/edit','PiutangController@edit')->name('piutang.edit');
 Route::patch('/piutang/{id}/edit','PiutangController@update')->name('piutang.update');
 
-Route::get('/operasional', 'OperasionalController@index')->name('operasional');
-Route::get('/operasional/input','OperasionalController@create')->name('operasional.create');
-Route::post('/operasional/input','OperasionalController@store')->name('operasional.store');
-Route::get('/operasional/{id}/edit','OperasionalController@edit')->name('operasional.edit');
-Route::get('/operasional/{id}/edit','OperasionalController@update')->name('operasional.update');
+Route::get('/pegawai', 'PegawaiController@index')->name('pegawai');
+Route::get('/pegawai/input','PegawaiController@create')->name('pegawai.create');
+Route::post('/pegawai/input','PegawaiController@store')->name('pegawai.store');
+Route::get('/pegawai/{id}/edit','PegawaiController@edit')->name('pegawai.edit');
+Route::patch('/pegawai/{id}/edit','PegawaiController@update')->name('pegawai.update');
+Route::delete('/pegawai/{pegawai}/delete','PegawaiController@destroy')->name('pegawai.destroy');
 // Route::get('/input.php', function () {
 //     return view('input');
 // });

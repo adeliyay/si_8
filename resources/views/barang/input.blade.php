@@ -43,7 +43,7 @@
             <span>Data piutang</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('operasional') }}">
+          <a class="nav-link" href="{{ route('pegawai') }}"> <!-- formerly 'operasional'  -->
             <i class="fas fa-fw fa-table"></i>
             <span>Biaya Bulanan</span></a>
         </li>

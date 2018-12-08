@@ -43,7 +43,7 @@
             <span>Data piutang</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('operasional') }}">
+          <a class="nav-link" href="{{ route('pegawai') }}"> <!-- formerly 'operasional'  -->
             <i class="fas fa-fw fa-table"></i>
             <span>Biaya Bulanan</span></a>
         </li>
@@ -100,7 +100,7 @@
                       <td>{{$Barang->jual}}</td>
                     </tr>
                   @endforeach
-                    
+
                   </tbody>
                 </table><br>
                 <a href="{{ route('barang') }}" class="btn btn-primary" role="button" aria-pressed="true">Tambah Barang</a>
