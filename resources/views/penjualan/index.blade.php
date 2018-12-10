@@ -82,7 +82,7 @@
               <th>Nama Konsumen</th>
               <th>Deskripsi</th>
               <th>Total Jual</th>
-              <th>Revenue</th>
+              <th>Keuntungan</th>
               <th>Edit</th>
               <th>Delete</th>
             </tr>
@@ -98,9 +98,27 @@
             </tr>
           </tfoot> -->
           <tbody>
+          <?php
+                  $i = 0;
+                  ?>
+          @foreach ($penjualans as $penjualan)
+            <tr>
+              <td></td>
+              <td>{{App\Barang::find($penjualan->id_barang)->nama}}</td>
+              <td>{{$penjualan->nama_konsumen}}</td>
+              <td>{{$penjualan->deskripsi_penjualan}}</td>
+              <td>{{$penjualan->terjual}}</td>
+              <td>{{$result[$i]}}</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <?php
+                    $i++;
+                    ?>
+            @endforeach
           </tbody>
         </table><br>
-        <a href="#" class="btn btn-primary" role="button" aria-pressed="true">Tambah Penjualan</a>
+        <a href="{{ route('penjualan.create') }}" class="btn btn-primary" role="button" aria-pressed="true">Tambah Penjualan</a>
       </div>
     </div>
     <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>

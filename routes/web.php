@@ -24,6 +24,10 @@ Route::get('/piutang', 'HomeController@piutang')->name('piutang');
 Route::get('/home', 'HomeController@home')->name('home');
 Route::get('/operasional', 'HomeController@op')->name('operasional');
 
+Route::get('/penjualan', 'PenjualanController@index')->name('penjualan');
+Route::get('/penjualan/input', 'PenjualanController@create')->name('penjualan.create');
+Route::post('/penjualan/input', 'PenjualanController@store')->name('penjualan.store');
+
 Route::get('/barang/input', 'InputController@barang')->name('barang');
 Route::post('/barang/input', 'InputController@store')->name('barang.store');
 Route::get('/barang/{id}/edit','InputController@edit')->name('barang.edit');

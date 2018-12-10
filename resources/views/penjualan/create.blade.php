@@ -28,22 +28,17 @@
             <a class="dropdown-item" href="blank.html">Blank Page</a>
           </div>
         </li> -->
-        <li class="nav-item dropdown active">
-          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Data Penjualan</span>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <a class="dropdown-item" href="{{ route('penjualan') }}">Pendapatan</a>
-            <a class="dropdown-item" href="{{ route('operasional') }}">Pengeluaran</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('penjualan') }}">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Data Penjualan</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('barang.index') }}">
             <i class="fas fa-fw fa-table"></i>
             <span>Input Barang</span></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="{{ route('piutang') }}">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Data piutang</span></a>
@@ -57,64 +52,63 @@
 
       <div id="content-wrapper">
 
-<div class="container-fluid">
+        <div class="container-fluid">
 
-  <!-- Breadcrumbs-->
-  <!-- <ol class="breadcrumb">
-    <li class="breadcrumb-item">
-      <a href="#">Dashboard</a>
-    </li>
-    <li class="breadcrumb-item active">Tables</li>
-  </ol> -->
+          <!-- Breadcrumbs-->
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="{{route('piutang')}}">Data Penjualan</a>
+            </li>
+            <li class="breadcrumb-item active">Input</li>
+          </ol>
 
-  <!-- DataTables Example -->
-  <div class="card mb-3">
-    <div class="card-header">
-      <i class="fas fa-table"></i>
-      Data Pendapatan</div>
-    <div class="card-body">
-      <div class="table-responsive">
-        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>Nama Barang</th>
-              <th>Nama Konsumen</th>
-              <th>Deskripsi</th>
-              <th>Total Jual</th>
-              <th>Revenue</th>
-              <th>Edit</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          <!-- <tfoot>
-            <tr>
-              <th>Name</th>
-              <th>Position</th>
-              <th>Office</th>
-              <th>Age</th>
-              <th>Start date</th>
-              <th>Salary</th>
-            </tr>
-          </tfoot> -->
-          <tbody>
-          </tbody>
-        </table><br>
-        <a href="#" class="btn btn-primary" role="button" aria-pressed="true">Tambah Penjualan</a>
-      </div>
-    </div>
-    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-  </div>
-  <!-- /.container-fluid -->
+        <!-- Input Barang -->
+        <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-table"></i>
+              Input Data Penjualan</div>
+            <div class="card-body">
+              <div class="table-responsive">
+              <form action="{{ route('penjualan.store') }}" method="post">
+            {{ csrf_field() }}
+            {{$barangs}}
+            <div class="form-group">
+            <label class="control-label">Nama Barang</label>
+                <select class="form-control" name="id">
+                  @foreach($barangs as $barang)
+                    <option value="{{ $barang->id }}">{{ $barang->nama }}</option>
+                  @endforeach
+                </select>
+            </div>
+            <div class="form-group">
+              <label for="">Nama Konsumen</label>
+                <input type="text" class="form-control" name="nama_konsumen" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="">Deskripsi</label>
+                <textarea class="form-control" name="deskripsi_penjualan" rows="3" placeholder=""></textarea>
+            </div>
+            <div class="form-group">
+              <label for="">Total Jual</label>
+                <input type="number" class="form-control" name="terjual" placeholder="">
+            </div>
+
+            <div class="form-group">
+              <input type="submit" class="btn btn-primary" value="Save">
+            </div>
+          </form>
+            <!-- </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          </div> -->
 
         <!-- Sticky Footer -->
-        <footer class="sticky-footer">
+        <!-- <footer class="sticky-footer">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
               <span>Copyright © Your Website 2018</span>
             </div>
           </div>
-        </footer>
+        </footer> -->
 
       </div>
       <!-- /.content-wrapper -->
@@ -145,5 +139,4 @@
     <!-- Demo scripts for this page-->
     <script src="js/demo/datatables-demo.js"></script>
     <script src="js/demo/chart-area-demo.js"></script>
-
 @endsection

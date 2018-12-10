@@ -61,7 +61,7 @@
             <li class="breadcrumb-item active">Tables</li>
           </ol> -->
 
-          <!-- DataTables Example -->
+          <!-- DataTables Barang -->
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
@@ -77,6 +77,7 @@
                       <th>Jumlah Barang</th>
                       <th>Harga Beli</th>
                       <th>Harga Jual</th>
+                      <th>Keuntungan</th>
                       <th>Update</th>
                       <th>Delete</th>
                     </tr>
@@ -92,6 +93,9 @@
                     </tr>
                   </tfoot> -->
                   <tbody>
+                  <?php
+                  $i = 0;
+                  ?>
                   @foreach ($barangs as $Barang)
                   @if($id == $Barang->user_id)
                     <tr>
@@ -101,6 +105,7 @@
                       <td>{{$Barang->jumlah}}</td>
                       <td>{{$Barang->beli}}</td>
                       <td>{{$Barang->jual}}</td>
+                      <td>{{$test[$i]}}</td>
                       <td><a href="{{ route('barang.edit', $Barang) }}" class="btn btn-primary" role="button" aria-pressed="true">Update</a></td>
                       <td>
                       <form class="" action="{{ route('barang.destroy', $Barang) }}" method="post">
@@ -109,6 +114,9 @@
                       <button type="submit" class="btn btn-danger" aria-pressed="true">Delete</button>
                       </form></td>
                     </tr>
+                    <?php
+                    $i++;
+                    ?>
                   @endif
                   @endforeach
 
@@ -120,6 +128,42 @@
             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
           </div>
 
+          <!-- DataTables Revenue -->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-table"></i>
+              Data Keuntungan</div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Nama Barang</th>
+                      <th>Keuntungan</th>
+                    </tr>
+                  </thead>
+                  <!-- <tfoot>
+                    <tr>
+                      <th>Name</th>
+                      <th>Position</th>
+                      <th>Office</th>
+                      <th>Age</th>
+                      <th>Start date</th>
+                      <th>Salary</th>
+                    </tr>
+                  </tfoot> -->
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  
+                  </tbody>
+                </table><br>
+              </div>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          </div>
           <!-- <p class="small text-center text-muted my-5">
             <em>More table examples coming soon...</em>
           </p> -->
