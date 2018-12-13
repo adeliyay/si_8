@@ -27,10 +27,15 @@
             <a class="dropdown-item" href="blank.html">Blank Page</a>
           </div>
         </li> -->
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('penjualan') }}">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Data Penjualan</span></a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Data Penjualan</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+            <a class="dropdown-item" href="{{ route('penjualan') }}">Pendapatan</a>
+            <a class="dropdown-item" href="{{ route('operasional') }}">Pengeluaran</a>
+          </div>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="{{ route('barang.index') }}">
@@ -77,7 +82,6 @@
                       <th>Jumlah Barang</th>
                       <th>Harga Beli</th>
                       <th>Harga Jual</th>
-                      <th>Keuntungan</th>
                       <th>Update</th>
                       <th>Delete</th>
                     </tr>
@@ -105,7 +109,6 @@
                       <td>{{$Barang->jumlah}}</td>
                       <td>{{$Barang->beli}}</td>
                       <td>{{$Barang->jual}}</td>
-                      <td>{{$test[$i]}}</td>
                       <td><a href="{{ route('barang.edit', $Barang) }}" class="btn btn-primary" role="button" aria-pressed="true">Update</a></td>
                       <td>
                       <form class="" action="{{ route('barang.destroy', $Barang) }}" method="post">
@@ -128,42 +131,6 @@
             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
           </div>
 
-          <!-- DataTables Revenue -->
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fas fa-table"></i>
-              Data Keuntungan</div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>Nama Barang</th>
-                      <th>Keuntungan</th>
-                    </tr>
-                  </thead>
-                  <!-- <tfoot>
-                    <tr>
-                      <th>Name</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>Age</th>
-                      <th>Start date</th>
-                      <th>Salary</th>
-                    </tr>
-                  </tfoot> -->
-                  <tbody>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                  
-                  </tbody>
-                </table><br>
-              </div>
-            </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-          </div>
           <!-- <p class="small text-center text-muted my-5">
             <em>More table examples coming soon...</em>
           </p> -->
