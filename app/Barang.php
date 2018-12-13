@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Barang extends Model
 {
-    protected $table = 'Barangs';
+    protected $table = 'barangs';
     protected $fillable = ['user_id','nama','distributor','deskripsi','jumlah','beli','jual','keuntungan'];
     public function penjualan(){
         return $this->hasMany('App\penjualan');
@@ -19,9 +19,9 @@ class Barang extends Model
     // }
     // protected static function boot() {
     //     parent::boot();
-    
+
     //     static::saving(function($model){
     //         $model->keuntungan = $model->jual - $model->beli;
-    //     }); 
+    //     });
     // }
 }

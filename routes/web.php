@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+//Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 Route::get('/penjualan', 'HomeController@jual')->name('penjualan');
 // Route::get('/barang', 'HomeController@barang')->name('barang');
 Route::get('/piutang', 'HomeController@piutang')->name('piutang');

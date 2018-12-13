@@ -132,15 +132,73 @@
           <!-- Area Chart Example-->
           <div class="card mb-3">
             <div class="card-header">
-              <i class="fas fa-chart-area"></i>
-              Area Chart Example</div>
-            <div class="card-body">
-              <canvas id="myAreaChart" width="100%" height="30"></canvas>
+              <i class="fas fa-chart-bar"></i>
+              Revenue Bar Chart</div>
+            <!-- <div class="card-body">
+              <canvas id="myAreaChart" width="100%" height=30></canvas>
+            </div> -->
+            <div class="panel-body">
+                <canvas id="myChart" width="100%" height="30%"></canvas>
             </div>
+            <script type="text/javascript">
+            // Set new default font family and font color to mimic Bootstrap's default styling
+            Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+            Chart.defaults.global.defaultFontColor = '#292b2c';
+
+            <?php
+            $koneksi     = mysqli_connect("127.0.0.1", "root", "", "finama_db");
+            $revenue      = mysqli_query($koneksi, "SELECT revenue FROM penjualans WHERE YEAR(created_at)='2018' ORDER BY MONTH(created_at)");
+            //$bulan = mysqli_query($koneksi, "SELECT created_at FROM penjualans order by ID asc");
+            ?>
+
+            // Area Chart Example
+            var ctx = document.getElementById("myChart");
+            var myLineChart = new Chart(ctx, {
+              type: 'bar',
+              data: {
+                labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"],
+                datasets: [{
+                  label: "Sessions",
+                  backgroundColor: "rgba(2,117,216,0.)",
+                  borderColor: "rgba(2,117,216,1)",
+                  data: [<?php while ($p = mysqli_fetch_array($revenue)) { echo '"' . $p['revenue'] . '",';}?>],
+                }],
+              },
+              options: {
+                scales: {
+                  xAxes: [{
+                    time: {
+                      unit: 'date'
+                    },
+                    gridLines: {
+                      display: false
+                    },
+                    ticks: {
+                      maxTicksLimit: 7
+                    }
+                  }],
+                  yAxes: [{
+                    ticks: {
+                      min: 0,
+                      max: 40000,
+                      maxTicksLimit: 5
+                    },
+                    gridLines: {
+                      color: "rgba(0, 0, 0, .125)",
+                    }
+                  }],
+                },
+                legend: {
+                  display: true
+                }
+              }
+            });
+
+            </script>
             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
           </div>
 
-          <!-- DataTables Example -->
+          <!-- DataTables Example
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
@@ -632,7 +690,8 @@
             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
           </div>
 
-        </div>
+          </div>
+           -->
         <!-- /.container-fluid -->
 
         <!-- Sticky Footer -->

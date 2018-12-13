@@ -99,22 +99,23 @@
           </tfoot> -->
           <tbody>
           <?php
-                  $i = 0;
-                  ?>
+                $i = 1;
+                use App\Barang;
+          ?>
           @foreach ($penjualans as $penjualan)
             <tr>
-              <td></td>
-              <td>{{App\Barang::find($penjualan->id_barang)->nama}}</td>
+              <td>{{$i}}</td>
+              <td>{{$penjualan->nama_barang}}</td>
               <td>{{$penjualan->nama_konsumen}}</td>
               <td>{{$penjualan->deskripsi_penjualan}}</td>
               <td>{{$penjualan->terjual}}</td>
-              <td>{{$result[$i]}}</td>
+
               <td></td>
               <td></td>
             </tr>
             <?php
-                    $i++;
-                    ?>
+                  $i++;
+             ?>
             @endforeach
           </tbody>
         </table><br>

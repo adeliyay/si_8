@@ -13,7 +13,7 @@ class PenjualanController extends Controller
     public function index()
     {
         $barangs = Barang::all();
-        $id = Auth::user()->id; 
+        $id = Auth::user()->id;
         $penjualans = penjualan::all();
         $coba = $barangs->pluck('jual');
         $coba2 = $barangs->pluck('beli');
@@ -21,20 +21,24 @@ class PenjualanController extends Controller
         $id_jual = $penjualans->pluck('id_barang');
         $coba3 = $penjualans->pluck('terjual');
         $i = 0;
-        for($i=0;$i<$coba->count();$i++){
+
+        $result = array();
+        $test = array();
+
+        for($i = 0; $i < $coba->count(); $i++)
+        {
             $test[$i] = $coba[$i] - $coba2[$i];
             $test2[$i] = penjualan::where('id_barang',$ids[$i])->sum('terjual');
-            $result[$i] = $test[$i] * $test2[$i]; 
+            $result[$i] = $test[$i] * $test2[$i];
         }
-
         //$penjualans= Barang::get()->pluck('nama','id');
         // $penjualans = penjualan::with('get_Barang')->get();
-        return view('penjualan.index', compact('barang','penjualans','id','result'));
+        return view('penjualan.index', compact('barangs','penjualans','id','result'));
     }
     public function create()
     {
         $barangs = Barang::all();
-        
+
         return view('penjualan.create', compact('barangs'));
     }
     // public function store(Request $request)
