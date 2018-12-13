@@ -29,7 +29,7 @@ class HomeController extends Controller
     {
         return view('penjualan');
     }
-   
+
     public function piutang()
     {
         return view('piutang');
