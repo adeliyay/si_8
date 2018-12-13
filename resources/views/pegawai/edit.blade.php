@@ -27,11 +27,16 @@
           <a class="dropdown-item" href="blank.html">Blank Page</a>
         </div>
       </li> -->
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('penjualan') }}">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Data Penjualan</span></a>
-      </li>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Data Penjualan</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+            <a class="dropdown-item" href="{{ route('penjualan') }}">Pendapatan</a>
+            <a class="dropdown-item" href="{{ route('operasional') }}">Pengeluaran</a>
+          </div>
+        </li>
       <li class="nav-item">
         <a class="nav-link" href="{{ route('barang.index') }}">
           <i class="fas fa-fw fa-table"></i>

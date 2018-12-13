@@ -71,12 +71,12 @@
               <div class="table-responsive">
               <form action="{{ route('penjualan.store') }}" method="post">
             {{ csrf_field() }}
-            {{$barangs}}
+            <!-- {{$barangs}} -->
             <div class="form-group">
             <label class="control-label">Nama Barang</label>
                 <select class="form-control" name="id">
                   @foreach($barangs as $barang)
-                    <option value="{{ $barang->id }}">{{ $barang->nama }}</option>
+                    <option value="{{ $barang->id }}">{{ $barang->id }}</option>
                   @endforeach
                 </select>
             </div>
